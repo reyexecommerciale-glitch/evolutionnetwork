@@ -45,22 +45,72 @@ export interface SiteSettings {
 
 // --- DB helpers (Locale JSON) ---
 function readDB(): any {
-  const data = fs.readFileSync(DB_PATH, 'utf-8');
-  const db = JSON.parse(data);
-  if (!db.sessions) db.sessions = [];
-  if (!db.settings) {
-    db.settings = {
+  const fallbackData = {
+    articles: [
+      {
+        id: "1",
+        title: "FiveM 2.0 introduce il sistema OneSync Infinity globale",
+        content: "<p>Cfx.re ha annunciato l'integrazione globale di <strong>OneSync Infinity</strong> per tutti i server FiveM...</p>",
+        category: "FiveM",
+        timestamp: new Date().toISOString(),
+        author: "Rey Carbone",
+        isLive: true,
+        image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=800",
+        status: "published"
+      }
+    ],
+    users: [
+      {
+        id: "admin-1",
+        name: "Rey Carbone",
+        email: "admin@pulsewire.io",
+        password: "BlueBlack2026!",
+        role: "admin",
+        createdAt: "2026-01-01T00:00:00Z"
+      }
+    ],
+    sessions: [],
+    settings: {
       maintenance: false,
-      maintenanceMessage: 'Stiamo facendo manutenzione. Torniamo online a breve.',
-      siteName: 'PulseWire',
-      siteTagline: '',
-    };
+      maintenanceMessage: "Stiamo facendo manutenzione. Torniamo online a breve.",
+      siteName: "PulseWire",
+      siteTagline: "GTA 5 · FiveM · Roleplay"
+    },
+    stats: {
+      totalViews: 142500,
+      activeUsers: 1,
+      storiesPublished: 1
+    }
+  };
+
+  try {
+    if (!fs.existsSync(DB_PATH)) {
+      return fallbackData;
+    }
+    const data = fs.readFileSync(DB_PATH, 'utf-8');
+    const db = JSON.parse(data);
+    if (!db.sessions) db.sessions = [];
+    if (!db.settings) {
+      db.settings = {
+        maintenance: false,
+        maintenanceMessage: 'Stiamo facendo manutenzione. Torniamo online a breve.',
+        siteName: 'PulseWire',
+        siteTagline: '',
+      };
+    }
+    return db;
+  } catch (err) {
+    console.warn("Errore lettura db.json, uso fallback:", err);
+    return fallbackData;
   }
-  return db;
 }
 
 function writeDB(data: any) {
-  fs.writeFileSync(DB_PATH, JSON.stringify(data, null, 2));
+  try {
+    fs.writeFileSync(DB_PATH, JSON.stringify(data, null, 2));
+  } catch (err) {
+    console.warn("Impossibile scrivere db.json (es. Vercel read-only):", err);
+  }
 }
 
 // --- Database Adapter ---

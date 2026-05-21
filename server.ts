@@ -481,5 +481,13 @@ if (!process.env.VERCEL) {
   });
 }
 
+// Gestione degli errori globale per ritornare JSON invece di HTML
+app.use((err: any, req: Request, res: Response, next: NextFunction) => {
+  console.error('API Error:', err);
+  res.status(err.status || 500).json({
+    error: err.message || 'Errore interno del server',
+  });
+});
+
 // Esporta l'app per Vercel serverless
 export default app;

@@ -1,0 +1,59 @@
+{
+  "articles": [
+    {
+      "id": "1",
+      "title": "FiveM 2.0 introduce il sistema OneSync Infinity globale",
+      "content": "<p>Cfx.re ha annunciato l'integrazione globale di <strong>OneSync Infinity</strong> per tutti i server FiveM, eliminando il limite storico dei 32 slot e portando fino a 2048 giocatori sincronizzati nello stesso istanza.</p><p>Per i proprietari di server roleplay, la novità più importante riguarda la <em>persistenza dello stato del mondo</em>: veicoli, oggetti e modifiche all'ambiente verranno sincronizzati in modo nativo, riducendo il carico sui resource lato server.</p>",
+      "category": "FiveM",
+      "timestamp": "2026-05-18T08:00:00Z",
+      "author": "Rey Carbone",
+      "isLive": true,
+      "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=800",
+      "status": "published"
+    },
+    {
+      "id": "2",
+      "title": "GTA 5 Online — Cayo Perico Heist 2.0 in arrivo",
+      "content": "<p>Rockstar ha confermato un'espansione del colpo all'isola di Cayo Perico con nuove rotte di infiltrazione, NPC con AI rivista e ricompense rivalutate per il 2026.</p><p>Tra le novità più richieste dalla community: la possibilità di portare a termine il colpo in cooperativa fino a 4 giocatori senza penalizzazioni sui guadagni.</p>",
+      "category": "GTA 5",
+      "timestamp": "2026-05-17T14:30:00Z",
+      "author": "Rey Carbone",
+      "isLive": false,
+      "image": "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&q=80&w=800",
+      "status": "published"
+    },
+    {
+      "id": "3",
+      "title": "Roleplay: come strutturare una gang server-side senza lag",
+      "content": "<p>Una delle sfide più comuni per chi gestisce un server FiveM RP è bilanciare la complessità delle gang con le performance del server.</p><p>In questa guida vediamo come strutturare gerarchie, territori e missioni dinamiche usando esclusivamente eventi server-side per evitare exploit lato client.</p>",
+      "category": "Roleplay",
+      "timestamp": "2026-05-16T06:15:00Z",
+      "author": "Rey Carbone",
+      "isLive": true,
+      "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=800",
+      "status": "published"
+    }
+  ],
+  "users": [
+    {
+      "id": "admin-1",
+      "name": "Rey Carbone",
+      "email": "admin@pulsewire.io",
+      "password": "BlueBlack2026!",
+      "role": "admin",
+      "createdAt": "2026-01-01T00:00:00Z"
+    }
+  ],
+  "sessions": [],
+  "settings": {
+    "maintenance": false,
+    "maintenanceMessage": "Stiamo facendo manutenzione. Torniamo online a breve.",
+    "siteName": "PulseWire",
+    "siteTagline": "GTA 5 · FiveM · Roleplay"
+  },
+  "stats": {
+    "totalViews": 142500,
+    "activeUsers": 1240,
+    "storiesPublished": 842
+  }
+}
